@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-
-namespace OrdDic.Test
+﻿namespace OrdDic.Test
 {
     public class UnitTest2
     {
@@ -24,7 +22,7 @@ namespace OrdDic.Test
         [InlineData(100, 50)]
         [InlineData(1000, 75)]
         [InlineData(10000, 1000)]
-        [InlineData(100000, 5601)]
+        [InlineData(100000, 50000)]
         [InlineData(500000, 205000)]
         public void EliminarElementos(int agregar, int eliminar)
         {
@@ -37,6 +35,6 @@ namespace OrdDic.Test
                 dic.Remove(i);
             }
             Assert.Equal(agregar - eliminar, dic.Count);
-        }    
+        }
     }
 }

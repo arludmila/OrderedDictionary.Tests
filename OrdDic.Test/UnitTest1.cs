@@ -6,6 +6,13 @@ namespace OrdDic.Test
     {
         // TESTS CON ORDERED DICTIONARY
         OrderedDictionary dic = new OrderedDictionary();
+        [Fact]
+        public void ObtenerValor()
+        {
+            dic.Add("1", "Elemento 1");
+            Assert.Equal("Elemento 1", dic[0]); // x indice
+            Assert.Equal("Elemento 1", dic["1"]); // x key/clave
+        }
         [Theory]
         [InlineData(100)]
         [InlineData(1000)]
@@ -24,7 +31,7 @@ namespace OrdDic.Test
         [InlineData(100,50)]
         [InlineData(1000,75)]
         [InlineData(10000,1000)]
-        [InlineData(100000,5601)]
+        [InlineData(100000,50000)]
         [InlineData(500000,205000)]
         public void EliminarElementosXKey(int agregar, int eliminar)
         {
@@ -42,7 +49,7 @@ namespace OrdDic.Test
         [InlineData(100, 50)]
         [InlineData(1000, 75)]
         [InlineData(10000, 1000)]
-        [InlineData(100000, 5601)]
+        [InlineData(100000, 50000)]
         [InlineData(500000, 205000)]
         public void EliminarElementosXIndex(int agregar, int eliminar)
         {
